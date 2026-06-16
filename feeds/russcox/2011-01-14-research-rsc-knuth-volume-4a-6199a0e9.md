@@ -1,5 +1,5 @@
 ---
-title: 'research!rsc: Knuth, Volume 4A'
+title: "research!rsc: Knuth, Volume 4A"
 url: https://research.swtch.com/knuth4a
 published: "2011-01-14T00:00:00Z"
 feed: russcox
@@ -14,7 +14,7 @@ guid: https://research.swtch.com/knuth4a
 
 [RSS](/feed.atom)
 
-# Knuth, Volume 4A Russ Cox January 14, 2011 *research.swtch.com/knuth4a* Posted on Friday, January 14, 2011.
+# Knuth, Volume 4A Russ Cox January 14, 2011 _research.swtch.com/knuth4a_ Posted on Friday, January 14, 2011.
 
 [![](https://research.swtch.com/IMG_20110114_115901.jpg)](https://research.swtch.com/IMG_20110114_115901.jpg)
 
