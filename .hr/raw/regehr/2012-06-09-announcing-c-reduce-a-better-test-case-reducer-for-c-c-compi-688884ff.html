@@ -1,9 +1,0 @@
-<p><em>Test-case reduction</em> means taking a large input to a computer program (for compiler debugging, the input is itself a program) and turning it into a much smaller input that still triggers the bug. It is a very important part of the debugging process.</p>
-<p><a href="http://delta.tigris.org/">Delta</a>, an excellent open-source implementation of the <a href="http://www.st.cs.uni-saarland.de/dd/">delta debugging</a> algorithm <em>ddmin</em>, has been the test-case reduction tool of choice for compiler developers. We&#8217;ve just released C-Reduce: a test case reducer that often gives output 25 times smaller than Delta&#8217;s. The contribution of C-Reduce is adding a lot of domain specificity. For example, it knows how to resolve a typedef, flatten a namespace, inline a function call, remove a dead argument from a function, and rename a variable. These (and dozens of other transformations) use Clang as a source-to-source transformation engine. Although domain specificity is displeasing in a reduction tool, C/C++ programs cannot be fully reduced without it. <a href="https://blog.regehr.org/archives/696">This earlier blog post</a> contains many examples of C-Reduce&#8217;s output.</p>
-<p>Resources:</p>
-<ul>
-<li>Download source from the <a href="http://embed.cs.utah.edu/creduce/">C-Reduce home page</a>.</li>
-<li>Learn how to use C-Reduce and see some examples <a href="http://embed.cs.utah.edu/creduce/using/">here</a>.</li>
-<li>See our <a href="http://www.cs.utah.edu/~regehr/papers/pldi12-preprint.pdf">PLDI 2012 paper</a> for a more thorough explanation and evaluation of C-Reduce.</li>
-</ul>
-<p>We&#8217;d be happy to hear feedback.</p>

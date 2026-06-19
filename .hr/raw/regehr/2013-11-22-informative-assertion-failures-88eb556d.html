@@ -1,9 +1,0 @@
-<p>The other day a student was asking me how to make assertion failures in software more informative. I told him there are two pretty easy ways to do this. First, define a customized assert that takes two arguments: the predicate and also a description. For example, in the <a href="http://botan.randombit.net/">Botan</a> crypto library we see lines like this:</p>
-<pre class="brush: cpp; title: ; notranslate" title="">
-BOTAN_ASSERT(signing_key, &quot;Signing key was set&quot;);
-</pre>
-<p>The second technique is to use a standard single-argument assert like this:</p>
-<pre class="brush: cpp; title: ; notranslate" title="">
-assert((depth &gt; 0) &amp;&amp; &quot;Invalid depth!&quot;);
-</pre>
-<p>Any other good tricks out there?</p>

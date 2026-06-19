@@ -1,9 +1,0 @@
-<p>In May we released <a href="https://embed.cs.utah.edu/creduce/">C-Reduce</a> 2.5 which builds against LLVM/Clang 3.8. New in this release:</p>
-<ul>
-<li>Improved reduction of non-preprocessed C/C++ code. C-Reduce now includes #included files that are below a certain size and also uses <a href="http://dotat.at/prog/unifdef/">unifdef</a> to remove #ifdef/#endif pairs. Specialization of #define directives is not implemented yet.
-<li>Support for reducing multiple files at once. This is useful for reducing inputs that trigger LTO bugs or that are not preprocessed.
-<li>Support for reducing OpenCL files, contributed by the authors of <a href="https://www.doc.ic.ac.uk/~afd/homepages/papers/pdfs/2016/IWOCL_CL-Reduce.pdf">this paper</a>.
-<li>Improved output for <tt>creduce --help</tt>.
-<li>Lots of cleanups and bug fixes including a rewrite of the pass that removes groups of lines from a file.
-</ul>
-<p>Many thanks to those who contributed to this release!</p>

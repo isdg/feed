@@ -1,9 +1,0 @@
-
-        <span>October 09, 2025</span>
-        <h1><a href="#2025-10-09">no-matrix build option
-</a></h1>
-        <p>Author: Andrew Kelley</p><p>I added a new build option, <code>-Dno-matrix</code>, which makes it so that using <code>zig build test-std</code> or <code>zig build test-behavior</code> it only runs the default, native target tests. This is handy when you already know it’s going to be in a failing state for a while and you’re working on a big change.</p><p>In particular, it combines with <code>--watch</code> and <code>-fincremental</code> to make the development loop instant. This is huge for me since I work on the standard library often. Previously, I would run <code>zig test lib/std.zig</code> in order to get this effect, but since it takes a few seconds to compile, I would try to fix all the errors before rerunning the command. This worked okay to amortize the cost, but now I just press save in vim and the new errors are literally on my screen in the blink of an eye.</p><p>So here’s the full build command I’ve been enjoying:</p><pre><code>zig build test-std -Dno-matrix --watch -fincremental
-</code></pre>
-      </div>
-    
-      

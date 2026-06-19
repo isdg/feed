@@ -1,8 +1,0 @@
-
-        <span>October 29, 2024</span>
-        <h1><a href="#2024-10-29">File Watching Implemented for kqueue
-</a></h1>
-        <p>Author: Andrew Kelley</p><p>I knocked out <a href="https://github.com/ziglang/zig/issues/20599" target="_blank">#20599</a> on a plane ride last week (coincidentally on the way to a <a href="https://bumblebeargames.com/pages/bumblebash-5" target="_blank">KQ tournament</a>), so if you’re tracking master branch, you can now use the <code>zig build --watch</code> feature on macOS, FreeBSD, OpenBSD, NetBSD, DragonFlyBSD, and Haiku.</p><p>This feature tracks all file system inputs, automatically repeating invalidated build steps. It can be quite handy when refactoring a codebase using a terminal-based workflow since it means seeing instant feedback when any build inputs - source code or otherwise - are updated.</p><p>KQueue allows placing a watch on an open directory handle, but the event does not indicate the name of the changed file within any given directory. This is no problem for the Zig Build System. If any directory that contains watched files are triggered, the respective steps are invalidated, and then those steps use fstat to determine if the cached artifacts are still valid.</p>
-      </div>
-    
-      

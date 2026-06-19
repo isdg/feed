@@ -1,9 +1,0 @@
-<p>With this post I will start to discuss a series of modifications of the C standard that I have (or will) propose for C2x. As a starting point there is the observation that the passage from one C standard to the next  was not easy in the past. This, neither for implementers of C compilers nor for users, because it was not easy to capture partial improvements. Basically for gcc, e.g., you had to add <code>-std=c11</code> or similar, and then test for the version number to see if a particular feature is implemented. This task then was even more complicated because some of the new features are language, and some are library.</p>
-<p><span style="font-size:15px;line-height:1.7;">This was tedious and error prone, and I think we should avoid such difficulties in the future.</span></p>
-<p><!--more--></p>
-<p>So for the next version I propose to relax the constraints on C standard header files. I think we should add a feature test macro for each header that reflects the C version which is completely implemented by this header.</p>
-<p>Most headers of the C standard are currently optional, either because they provide an optional feature such as threads or atomics, or because an environment may be free standing. Having feature test macros implies that we then can require that all headers are mandatory. If the feature is not supported by the platform, the only contents of such a header would be the feature test macro, set to <code>0</code>.</p>
-<p>It would be nice if the transition to the next standard could just start by this: everybody provide all standard headers, eventually empty but for the test macro.</p>
-<p>For the interested you can find my proposal here:</p>
-<p><a href="http://www.open-std.org/jtc1/sc22/wg14/www/docs/n2069.pdf">Mandatory C library headers</a><br />
-<a href="http://www.open-std.org/jtc1/sc22/wg14/www/docs/n2069.pdf"> simplify the transition to a new C standard</a></p>

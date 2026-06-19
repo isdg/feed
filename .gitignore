@@ -1,2 +1,4 @@
 **.DS_Store
-.hr/index.json
+# hr's local cache (mtime index, fetch cache, raw HTML, error log) — all
+# regenerable; per-article state lives in .meta.toml sidecars, not here.
+.hr/

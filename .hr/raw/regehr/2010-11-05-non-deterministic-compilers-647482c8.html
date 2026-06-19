@@ -1,9 +1,0 @@
-<p>Compilers are supposed to be deterministic, and they generally are. However, when a compiler has memory safety bugs (use of free memory, usually) and runs on an OS with ASLR (<a href="http://en.wikipedia.org/wiki/Address_space_layout_randomization">address space layout randomization</a>) enabled, it can behave non-deterministically. Compile a file one time and the result is correct, compile the exact  same file again and now the executable crashes or generates the wrong  answer. This may sound like a silly case that happens only in theory, but while hunting for compiler bugs I&#8217;ve seen it happen a number of times.</p>
-<p>The scary scenario is this:</p>
-<ol>
-<li>Safety critical embedded code is compiled for testing, and happens to be compiled correctly.</li>
-<li>Testing proceeds and finds no problems.</li>
-<li>For whatever reason, the system is compiled again and this time the wrong code is generated.</li>
-<li>Wrong code is deployed.</li>
-</ol>
-<p>Unlikely? Sure! But so are a lot of other things people developing safety critical systems have to worry about. If I were developing safety critical code I&#8217;d turn off ASLR for development tools, it&#8217;s cheap insurance.</p>

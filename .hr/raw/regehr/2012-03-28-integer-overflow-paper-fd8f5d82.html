@@ -1,9 +1,0 @@
-<p>My coauthors and I just finished the final version of our <a href="http://www.cs.utah.edu/~regehr/papers/overflow12.pdf">paper about integer overflows in C/C++ programs</a> that&#8217;s going to appear at <a href="http://www.ifi.uzh.ch/icse2012/">ICSE 2012</a>, a software engineering conference. Basically we made <a href="http://embed.cs.utah.edu/ioc/">a tool for dynamically finding integer overflows</a> (and related integer undefined behaviors) and used it to look at a lot of software. As you might expect, lots of overflows occur.</p>
-<p>Our analysis is based on dividing overflows into four kinds:</p>
-<ol>
-<li>Intentional, well-defined overflows, such as letting an unsigned integer wrap around in a PRNG. These are not a problem.</li>
-<li>Unintentional, well-defined overflows, such as an unsigned multiplication wrapping around when this was not expected to happen. These are logic errors.</li>
-<li>Intentional, undefined overflows, such as computing INT_MAX using (1&lt;&lt;31)-1. These are often &#8220;time bombs&#8221; &#8212; behaviors that (may) currently work but are waiting to be broken by improvements in compiler optimization.</li>
-<li>Unintentional, undefined overflows, such as letting a signed multiplication overflow when this was not expected to happen. These are logic errors.</li>
-</ol>
-<p>The conclusion is that people should at least test for undefined behaviors using a tool like IOC, and probably should also check for well-defined but unexpected overflows.</p>

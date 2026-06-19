@@ -1,8 +1,0 @@
-<p>Alert reader Chris S. emailed me to point out <a href="http://code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/">this post</a> by a developer at flickr about how to make IE scale images more smoothly. All you have to do is add</p>
-<blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
-<p>img { -ms-interpolation-mode:bicubic; }</p>
-</blockquote>
-<p>to the stylesheet. It worked!</p>
-<p><img data-recalc-dims="1" loading="lazy" decoding="async" height="199" alt="" src="https://i0.wp.com/www.joelonsoftware.com/wp-content/uploads/2008/12/22BeforeAndAfter.png?resize=508%2C199&#038;ssl=1" width="508" border="0" /></p>
-<p>Note that all the other browsers use bicubic interpolation for scaling by default, because that’s the only thing that make sense, but IE requires a non-standard CSS extension. So, pictures on this site should be a little smoother for those of you determined to use Internet Explorer.</p>
-<p>Happy Hannuka!</p>

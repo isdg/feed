@@ -1,9 +1,0 @@
-Many organizations require US <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards">Federal Information Processing Standard</a> (FIPS)
-certification of the crypto code they are running.  The certification
-process is lengthy, but the bigger problem is that the way the crypto
-subsystem is built into the kernel makes the result unable to be reused
-across kernel updates.  I have proposed a <a
-href="https://lwn.net/ml/all/20260418002032.2877-1-wanjay@amazon.com/">patch
-series</a> that decouples the crypto subsystem into a standalone
-loadable module, allowing a certified crypto module to be reused with
-multiple kernels and, thus, requiring fewer lengthy recertification delays.

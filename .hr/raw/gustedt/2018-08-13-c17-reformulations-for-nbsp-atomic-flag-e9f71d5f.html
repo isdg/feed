@@ -1,9 +1,0 @@
-<p>In C11, there was a problem with the fact that <code>atomic_flag</code> is one of the rare types that is not considered to have a value, but it only has state (<em>clear</em> and <em>set</em>) which is changed via function calls. (<code>mtx_t</code> and <code>cnd_t</code> are other examples of such types.) There was no established relation between these states and the return value of the <code>atomic_flag_test_and_set</code> functions (which is <code>bool</code>).</p>
-<p>C17 clears that up by prescribing the return values of <code>atomic_flag_test_and_set</code></p>
-<p><!--more--></p>
-<p>The C17 description (7.17.8.1 p2) of the <code>atomic_flag_test_and_set</code> functions, first sentence now reads:</p>
-<blockquote><p>Atomically places the atomic flag pointed to by <code>object</code> in the set state and returns the value corresponding to the immediately preceding state.</p></blockquote>
-<p>The return value specification (p3) has been changed to:</p>
-<blockquote><p>The <code>atomic_flag_test_and_set</code> functions return the value that corresponds to the state of the atomic flag immediately before the effects. The return value true corresponds to the set state and the return value false corresponds to the clear state.</p></blockquote>
-<p>The description of <code>atomic_flag_clear</code> (7.17.8.2, p2), second phrase, has also been clarified as follows:</p>
-<blockquote><p>Atomically places the atomic flag pointed to by <code>object</code> into the clear state.</p></blockquote>

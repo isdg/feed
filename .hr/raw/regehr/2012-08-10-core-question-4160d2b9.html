@@ -1,9 +1,0 @@
-<p><em>[This post is about machines used by people. I realize things are different in the server room.]</em></p>
-<p>We had one core per socket for a long time. When multi-cores came along, dual core seemed pretty awkward: real concurrency was possible, but with speedup bounded above by two, there wasn&#8217;t much point doing anything trickier than &#8220;make -j2&#8221;. Except in low-end machines two cores seems to have been a passing phase. Now, several years later, it is possible to buy desktop processors with six or eight cores, but they do not seem to be very common or popular. However, I will definitely spend some time working for a 4x speedup, so stalling there may not be such a shame. Even some inexpensive tablets are quad core now. But are we just pausing at four cores for another year or two, or is this going to be a stable sweet spot? If we are stuck at four, there should be a reason. A few random guesses:</p>
-<ul>
-<li>Desktop workloads seldom benefit much from more than four cores.</li>
-<li>Going past four cores puts too much of a squeeze on the number of transistors available for cache memory.</li>
-<li>Above four cores, DRAM becomes a significant bottleneck.</li>
-<li>Above four cores, operating systems run into scalability problems.</li>
-</ul>
-<p>None of these limitations is fundamental, so perhaps in a few years four cores will be low-end and most workstations will be 16 or 32?</p>
