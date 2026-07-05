@@ -124,10 +124,6 @@ url  = "https://antirez.com/rss"
 name = "antirez"
 
 [[feeds]]
-url  = "https://www.paulgraham.com/articles.html"
-name = "paulgraham"
-
-[[feeds]]
 url  = "https://burntsushi.net/index.xml"
 name = "burntsushi"
 
