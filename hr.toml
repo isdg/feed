@@ -238,6 +238,21 @@ name = "raschka"
 url  = "https://huyenchip.com/feed.xml"
 name = "huyenchip"
 
+# Ralf Jung — Rust/Miri, unsafe code semantics, PL research.
+[[feeds]]
+url  = "https://www.ralfj.de/blog/feed.xml"
+name = "ralfj"
+
+# Stephen Diehl — Haskell/PL, compilers, crypto skepticism essays.
+[[feeds]]
+url  = "https://www.stephendiehl.com/feed.xml"
+name = "diehl"
+
+# Roman Kashitsyn (MMapped) — Rust, systems, ICP/blockchain internals.
+[[feeds]]
+url  = "https://mmapped.blog/feed.xml"
+name = "mmapped"
+
 # Sort order for `hrb list` / `hrb feed`. "desc" = newest first.
 ordering = "desc"
 
