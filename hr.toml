@@ -249,6 +249,11 @@ name = "diehl"
 url  = "https://mmapped.blog/feed.xml"
 name = "mmapped"
 
+# Loris Cro (kristoff.it) — Zig core contributor; language design, tooling, dev culture.
+[[feeds]]
+url  = "https://kristoff.it/index.xml"
+name = "kristoff"
+
 # Sort order for `hrb list` / `hrb feed`. "desc" = newest first.
 ordering = "desc"
 
