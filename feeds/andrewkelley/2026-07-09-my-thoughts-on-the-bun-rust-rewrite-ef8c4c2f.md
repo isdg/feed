@@ -1,0 +1,234 @@
+---
+title: My Thoughts on the Bun Rust Rewrite
+url: https://andrewkelley.me/post/my-thoughts-bun-rust-rewrite.html
+published: "2026-07-09T04:56:58Z"
+feed: andrewkelley
+guid: https://andrewkelley.me/post/my-thoughts-bun-rust-rewrite.html
+---
+
+# My Thoughts on the Bun Rust Rewrite
+
+Context: [Rewriting Bun in Rust](https://bun.com/blog/bun-in-rust)
+
+## History
+
+When Jarred joined the Zig community about 5 years ago, I
+described him as someone who had strong "beginner energy". That
+is, he moved fast and tried a lot of different stuff, jumping head
+first into problems that he was not yet equipped to solve, leading
+to mediocre outcomes in terms of engineering, but learning a whole
+heck of a lot in the process. I see it as quite a healthy
+attitude, particularly for young people and students. This is the
+best way to level up and learn new things.
+
+As he focused his efforts on Bun he began to attract attention.
+JavaScript being the most popular programming language in the
+world, there are a lot of potential eyeballs on a promising new
+toolchain.
+
+This attention could have been harnessed in a few different ways.
+For example, he could have easily achieved a solid living via
+crowdfunding, even for San Francisco standards. But having
+graduated from the Thiel Fellowship school of thought rather than
+university, he was essentially groomed from a young age into
+uncritically embracing the Silicon Valley mindset, and he took
+venture capital.
+
+From the beginning, Jarred was appreciative towards the Zig
+project. He credited Zig on the Bun website for the project's
+performance achievements. He set up a monthly donation to
+[Zig Software Foundation](https://ziglang.org/zsf/) that amounted
+to $60,000 per year. He didn't have to do either of those things,
+but he did, and it was pretty cool of him. Even in
+[his blog post that I'm referencing](https://bun.com/blog/bun-in-rust),
+he expresses what I perceive as sincere grattitude towards the Zig
+project.
+
+However, once Bun became a VC-backed startup, he started racing
+towards the finish line. Now, instead of working on a free and
+open source project, learning and growing with the community,
+Jarred was running a business. It was at this point - when he
+suddenly became a manager - that this "beginner energy" started to
+hit differently for me. It's one thing to
+[choose a poor work-life balance for oneself](https://nitter.net/jarredsumner/status/1544821137128927232);
+a different thing entirely to
+[demand it of others](https://web.archive.org/web/20220824093845/https://twitter.com/oven_sh/status/1562248121656102914):
+
+> "Oven is going to be a grind, especially the first nine months
+> or so. If work-life balance means a lot of time spent not
+> working, it's probably not a good fit."
+
+Fun fact: people talk to each other.
+
+I talked to those who interviewed for a job at Oven. I talked to
+people who worked there. Those people talked to each other.
+Everybody talked to everybody. The grapevine was large and healthy
+and full of juicy grapes, and all those grapes contained the juice
+of the same message: Jarred was a stinky manager. Poor
+communication, unrealistic expectations, low empathy, no
+experience. Just a total shit show, from an employment
+perspective.
+
+Consequently, although Zig community members were eager to find
+work coding in Zig on the clock, most of the talent pool steered
+clear of Oven and Bun.
+
+At the same time, a rift between Zig and Jarred started widening.
+His singular focus on productivity and his startup's exit strategy
+was increasingly at odds with my longer term vision for the Zig
+project. I remember he kept nagging me to drop all my other
+priorities and work on a Language Server Protocol implementation
+and VSCode integration, while I had bigger plans.
+
+The main problem, however, was code quality.
+
+The Zig team regularly checks in on our users' projects. We read
+source code to find out how the language is affecting users, we
+test changes to see how problematic breakage might be, and we
+check for performance regressions.
+
+We became increasingly horrified at the programming practices we
+saw in Bun's codebase. Hacks on top of hacks.
+[Abuse of assertions.](https://kristoff.it/blog/fix-your-asserts/)
+Most of all, recklessly speeding past feature after feature with
+very little time taken for reflection and elimination of bugs and
+technical debt. Jarred was already writing slop well before he had
+access to LLMs. Now, it's not our business to police what our
+users do, but you may have noticed people screaming in our faces
+about memory safety constantly. You can imagine how we might want
+to put some social distance between ourselves and a project whose
+irresponsible software engineering practices invite the exact kind
+of criticism that people are eager to level.
+
+We made futile attempts to guide them towards better programming
+practices. There were a few exceptional heroes who did their very
+best in a dysfunctional company. You know who you are. But you
+can't stop a rising tide.
+
+By this time, we all felt at ZSF that Bun was a net liability, and
+this was _before_ RoboBun became the #1 contributor. Along with
+the discomfort of the publicly presumed poster child for Zig
+programming language actually being the prime example of How Not
+To Write Zig Code, at some point they would sell out (let's be
+honest, their vague "sell some cloud something" business plan was
+a farce from the get-go), we would receive some negative publicity
+by proxy, and we'd stop getting that regular donation.
+
+So, when the Anthropic aquisition finally happened, we at ZSF
+breathed a sigh of relief. When the donation silently stopped, our
+bank account was ready for it. When they neither canceled their
+monthly meeting with us, nor showed up, we were not surprised. The
+relationship was over.
+
+The (re)writing was on the wall. Even within a couple days, we
+already suspected a Rust rewrite was coming. And we were rooting
+for it! The acquisition by a large AI company was a burden,
+because even the indirect connection of Claude being written in
+Bun being written in Zig caused not only a surge of
+[drive by slop contributions](https://kristoff.it/blog/contributor-poker-and-ai/),
+but also an influx of tasteless AI enthusists into Zig communities
+who had to be informed that it's antisocial to paste LLM output
+into forum posts. For a moment, I feared Zig's identity would
+become known colloquially as a programming language associated
+with AI.
+
+When Jarred announced the Rust rewrite, we were ecstatic. It
+seemed too good to be true. I have to admit, I didn't think the
+technology was there, to pull off this stunt. But he did it, and
+now I'm metaphorically sipping delicious tea from a mug that says
+"It Tastes Like It's Not My Problem Anymore".
+
+## Addressing the Blog Post
+
+The blog post is expertly written. It's _almost_ like the
+marketing department of a trillion dollar company has a lot of
+money riding on this article.
+
+I do have some bones to pick however.
+
+There's a dichotomy being presented here where you have to either
+choose a "style guide" or a programming language feature in order
+to avoid bugs. The sleight of hand misdirects the reader away from
+the main way bugs are eliminated: by dedicating engineering
+resources to it. You're not giving TigerBeetle nearly enough
+credit. Quite simply they put in the time to find and eliminate
+the bugs, they make an effort to maintain a healthy relationship
+with ZSF, and Bun did neither of those things.
+
+The argument for shipping all the million lines of unreviewed code
+is that the test suite is good enough to catch everything. Then
+why are you saying you have so many annoying bugs in the Zig code?
+What happened to the test suite being sufficient to catch
+everything? It's not sufficient to catch bugs in Zig code but it
+is sufficient to catch bugs in 1 million lines of unreviewed slop?
+
+Performance increase is attributed to LTO, which Zig has supported
+for all of Bun's existence. It used to be enabled by default until
+we ran into too many LLVM bugs, all of which also affect Rust. We
+probably tried to tell you to try enabling it and you didn't
+listen. We have good advice, damn it!
+
+The post implies you were diligently fuzzing your Zig code, while
+during our calls the Bun team told us that they were not fuzzing
+anything.
+
+The blog post outlines a bunch of engineering work done to reduce
+binary size, to better make the case that "Bun is better in Rust".
+But all that engineering work had nothing to do with the rewrite.
+I think this (specifically the "binary size" section of the blog
+post) is precisely why it took so long for the blog post to come
+out, you were doing the engineering work that you should have done
+in the Zig codebase since the beginning. We've been trying to warn
+you about your `comptime` abuse for years. We even made
+[this time report thing](https://ziglang.org/download/0.15.1/release-notes.html#Web-Interface-and-Time-Report)
+specifically for projects that need to audit their use of
+`comptime`/ `inline` usage and compile times.
+
+I noticed that you neglected to mention compilation speed. Zig
+compiler project is about 600,000 lines of code - roughly the same
+size as Bun before the rewrite, and I'm clocking 16s to build from
+scratch with a clean cache, followed by 90ms for each subsequent
+edit with incremental compilation enabled. What are the
+corresponding measurements of Bun post-rewrite?
+
+## What Did We Learn Here Today?
+
+The main issue here was the relationship breakdown, as I've
+outlined above, nothing to do with programming language features.
+Of course, I don't expect the blog post to admit that. Really, it
+was well played.
+
+Zooming out a bit, I want to make a few things clear.
+
+One, I'm genuinely grateful for the donations ZSF received from
+Bun.
+[We spent that money paying contributors to work on Zig](https://ziglang.org/news/2025-financials/).
+
+Two, I actually don't have any personal criticisms of Jarred. He
+has different taste than me, he wants different things out of life
+than me. But I think he's actually happy and successful exactly
+where he is. He figured out how to accomplish all the stuff in
+life that he wants. He gets to live out his productivity fantasy
+fever dream, he's probably already super wealthy. He has minor
+tech celebrity status.
+
+Honestly, I think he did well for himself, and I don't wish him
+any ill will.
+
+I added this paragraph in an update to this blog post because it
+seems like people are having a hard time believing me when I say
+it's not personal, and that I actually accept Jarred for who he
+is, and actually perceive him as successful by his own standards,
+and in fact genuinely happy for him. It's the truth though. I
+accept people who are wildly different than me. I don't hold it
+against people to have different tastes than me. And I don't even
+hate my opponents in the world of business. If anything we have
+something in common, we're both playing the same game, albeit on
+opposite teams. We both love the game though.
+
+That said I'm happy that our business interests are no longer
+intertwined! As soon as the Internet stops arguing in public about
+whether the rewrite was good or bad for Bun based on the language
+choice, I believe that concludes our interactions.
+
+[¯\\\_(ツ)\_/¯](https://www.youtube.com/watch?v=v7gi57NJDds)
