@@ -254,6 +254,11 @@ name = "mmapped"
 url  = "https://kristoff.it/index.xml"
 name = "kristoff"
 
+# The Rust Programming Language blog — official release notes & project news.
+[[feeds]]
+url  = "https://blog.rust-lang.org/feed.xml"
+name = "rust-lang"
+
 # Sort order for `hrb list` / `hrb feed`. "desc" = newest first.
 ordering = "desc"
 
