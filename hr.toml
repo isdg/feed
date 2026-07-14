@@ -259,6 +259,11 @@ name = "kristoff"
 url  = "https://blog.rust-lang.org/feed.xml"
 name = "rust-lang"
 
+# The Go Programming Language blog — official release notes & project news.
+[[feeds]]
+url  = "https://go.dev/blog/feed.atom"
+name = "go"
+
 # Sort order for `hrb list` / `hrb feed`. "desc" = newest first.
 ordering = "desc"
 
