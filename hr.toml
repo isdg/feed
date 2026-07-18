@@ -136,6 +136,10 @@ url  = "https://tigerbeetle.com/blog/atom.xml"
 name = "tigerbeetle"
 
 [[feeds]]
+url  = "https://clickhouse.com/rss.xml"
+name = "clickhouse"
+
+[[feeds]]
 url  = "https://bun.com/rss.xml"
 name = "bun"
 
@@ -219,6 +223,11 @@ name = "karpathy-musings"
 url  = "https://simonwillison.net/atom/everything/"
 name = "simonwillison"
 
+# Armin Ronacher (lucumr) — creator of Flask/Jinja; Python, systems, AI tooling.
+[[feeds]]
+url  = "https://lucumr.pocoo.org/feed.atom"
+name = "lucumr"
+
 # Sam Altman — OpenAI CEO; essays on AI, startups, the future.
 [[feeds]]
 url  = "https://blog.samaltman.com/posts.atom"
@@ -238,6 +247,11 @@ name = "huyenchip"
 [[feeds]]
 url  = "https://www.ralfj.de/blog/feed.xml"
 name = "ralfj"
+
+# jyn — rustc/build-system contributor; compiler internals, dev tooling.
+[[feeds]]
+url  = "https://jyn.dev/atom.xml"
+name = "jyn"
 
 # Stephen Diehl — Haskell/PL, compilers, crypto skepticism essays.
 [[feeds]]
