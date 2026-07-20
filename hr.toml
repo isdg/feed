@@ -278,6 +278,19 @@ name = "rust-lang"
 url  = "https://go.dev/blog/feed.atom"
 name = "go"
 
+# Lobsters — invite-only tech link aggregator (headline stream, like lwn: link
+# posts to other sites, not original prose). /search has no feed; these do.
+# Firehose of every new submission.
+[[feeds]]
+url  = "https://lobste.rs/newest.rss"
+name = "lobsters-newest"
+
+# Tag-scoped front page — narrowed to the systems/PL/compilers topics that match
+# the blogs above, so it doesn't drown out everything else.
+[[feeds]]
+url  = "https://lobste.rs/t/compilers,plt,rust,zig,go,performance,distributed,osdev,formalmethods.rss"
+name = "lobsters"
+
 # Sort order for `hrb list` / `hrb feed`. "desc" = newest first.
 ordering = "desc"
 
