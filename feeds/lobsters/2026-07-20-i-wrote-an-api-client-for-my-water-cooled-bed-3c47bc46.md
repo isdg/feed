@@ -2,7 +2,7 @@
 title: I wrote an API client for my water-cooled bed
 url: https://tinkering.xyz/bedctl/
 published: "2026-07-20T07:04:02Z"
-feed: lobsters
+feed: lobsters-newest
 guid: https://lobste.rs/s/op1k28
 ---
 
