@@ -2,7 +2,7 @@
 title: Security incident disclosure — July 2026
 url: https://huggingface.co/blog/security-incident-july-2026
 published: "2026-07-21T06:13:09Z"
-feed: lobsters-newest
+feed: lobsters
 guid: https://lobste.rs/s/ifh0wb
 ---
 

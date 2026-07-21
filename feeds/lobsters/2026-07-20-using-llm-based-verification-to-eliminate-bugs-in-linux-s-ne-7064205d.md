@@ -2,7 +2,7 @@
 title: Using LLM-based Verification to Eliminate Bugs in Linux's Network Stack
 url: https://www.basis.ai/blog/verified-nftables/
 published: "2026-07-20T13:57:41Z"
-feed: lobsters-newest
+feed: lobsters
 guid: https://lobste.rs/s/locapv
 ---
 

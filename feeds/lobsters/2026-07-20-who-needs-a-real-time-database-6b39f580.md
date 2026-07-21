@@ -2,7 +2,7 @@
 title: Who needs a real-time database?
 url: https://dataintellect.com/blog/who-needs-an-rdb/
 published: "2026-07-20T19:52:34Z"
-feed: lobsters-newest
+feed: lobsters
 guid: https://lobste.rs/s/advkuj
 ---
 

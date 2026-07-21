@@ -2,7 +2,7 @@
 title: Fuzzing for fun - unauthenticated denial of service in snac2
 url: https://nullenvk.pl/posts/02-snac2-json/
 published: "2026-07-20T07:04:16Z"
-feed: lobsters-newest
+feed: lobsters
 guid: https://lobste.rs/s/zjnc5o
 ---
 

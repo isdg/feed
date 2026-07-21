@@ -2,7 +2,7 @@
 title: Scanline edge-flag algorithm for antialiasing
 url: https://mlab.taik.fi/~kkallio/antialiasing/EdgeFlagAA.pdf
 published: "2026-07-20T07:09:19Z"
-feed: lobsters-newest
+feed: lobsters
 guid: https://lobste.rs/s/a12cfy
 ---
 

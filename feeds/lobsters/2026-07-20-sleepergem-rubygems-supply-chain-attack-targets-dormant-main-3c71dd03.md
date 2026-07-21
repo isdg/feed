@@ -2,7 +2,7 @@
 title: 'SleeperGem: RubyGems supply chain attack targets dormant maintainer accounts'
 url: https://www.aikido.dev/blog/sleepergem-rubygems-supply-chain-attack
 published: "2026-07-20T21:39:00Z"
-feed: lobsters-newest
+feed: lobsters
 guid: https://lobste.rs/s/xbfsho
 ---
 

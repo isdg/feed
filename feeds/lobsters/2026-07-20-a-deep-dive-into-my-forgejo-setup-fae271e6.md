@@ -2,7 +2,7 @@
 title: A deep dive into my Forgejo setup
 url: https://a.l3x.in/blog/welcome-to-my-forge/
 published: "2026-07-20T16:40:40Z"
-feed: lobsters-newest
+feed: lobsters
 guid: https://lobste.rs/s/jhcyuq
 ---
 

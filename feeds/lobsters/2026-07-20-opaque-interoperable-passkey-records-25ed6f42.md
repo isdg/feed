@@ -2,7 +2,7 @@
 title: Opaque, Interoperable Passkey Records
 url: https://words.filippo.io/passkey-record/
 published: "2026-07-20T22:46:53Z"
-feed: lobsters-newest
+feed: lobsters
 guid: https://lobste.rs/s/boyu9x
 ---
 

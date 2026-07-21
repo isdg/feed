@@ -2,7 +2,7 @@
 title: Secrets Don’t Belong in Config
 url: https://secretspec.dev/blog/secrets-dont-belong-in-config/
 published: "2026-07-21T00:09:48Z"
-feed: lobsters-newest
+feed: lobsters
 guid: https://lobste.rs/s/iypcjj
 ---
 

@@ -2,7 +2,7 @@
 title: An informal tutorial on Joy
 url: https://www.kevinalbrecht.com/code/joy-mirror/j01tut.html
 published: "2026-07-20T23:16:36Z"
-feed: lobsters-newest
+feed: lobsters
 guid: https://lobste.rs/s/93norp
 ---
 

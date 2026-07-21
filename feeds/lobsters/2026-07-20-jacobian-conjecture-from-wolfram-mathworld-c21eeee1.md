@@ -2,7 +2,7 @@
 title: Jacobian Conjecture from Wolfram MathWorld
 url: https://mathworld.wolfram.com/JacobianConjecture.html
 published: "2026-07-20T21:32:27Z"
-feed: lobsters-newest
+feed: lobsters
 guid: https://lobste.rs/s/so9azo
 ---
 
