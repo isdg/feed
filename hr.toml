@@ -203,6 +203,11 @@ name = "nelhage"
 url  = "https://colah.github.io/rss.xml"
 name = "colah"
 
+# Boris Cherny — creator of Claude Code; author of "Programming TypeScript". JS/TS, tooling.
+[[feeds]]
+url  = "https://borischerny.com/feed.xml"
+name = "cherny"
+
 # Lilian Weng ("Lil'Log") — OpenAI; rigorous ML deep-dives.
 [[feeds]]
 url  = "https://lilianweng.github.io/index.xml"
